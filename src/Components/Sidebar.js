@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className='shadow-lg w-48 p-3'>
      <ul className='pt-2 border-b-2 space-y-2'>
-        <li><Link to="/" className='hover:bg-gray-200 hover:font-bold'>Home</Link></li>
+        <li><Link to="/">Home</Link></li>
         <li>Shorts</li>
         <li>Subscription</li>
      </ul>

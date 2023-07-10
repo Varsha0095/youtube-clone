@@ -47,25 +47,27 @@ const Header = () => {
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
+
+
   return (
-    <div className="grid grid-flow-col p-3 m-2 shadow-lg">
+    <div className="grid grid-flow-col p-3 m-2 shadow-lg items-center">
       <div className="flex col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
-          className="h-8 cursor-pointer"
+          className="h-7 cursor-pointer hover:bg-gray-100"
           alt="menu"
           src="https://png.pngtree.com/png-vector/20220623/ourmid/pngtree-hamburger-menu-button-list-content-png-image_5288864.png"
         />
         <img
-          className="h-8 ml-3"
+          className="h-6 ml-3"
           alt="logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1200px-YouTube_Logo_2017.svg.png"
         />
       </div>
       <div className="col col-span-10 px-16">
-        <div>
+        <div className="flex items-start">
         <input
-          className="border border-gray-400 w-8/12 p-2 px-5 rounded-l-full"
+          className="border border-gray-400 w-8/12 p-2 px-5 rounded-l-full h-11"
           type="text"
           placeholder="Search"
           value={searchQuery}
@@ -73,20 +75,24 @@ const Header = () => {
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setShowSuggestions(false)}
         />
-        <button className="border border-gray-400 bg-gray-200 px-5 py-2 rounded-r-full">
+        <button className="border border-gray-400 bg-gray-200 px-5 py-2 rounded-r-full h-11">
           🔍
         </button>
+        <div>
+          <img className="p-2 m-2 h-10 w-10 hover:bg-gray-200" alt="mic" src="https://www.iconpacks.net/icons/1/free-microphone-icon-342-thumb.png" />
         </div>
+        </div>
+        
         {showSuggestions && <div className="absolute bg-white py-1 px-2 w-[32rem] border border-gray-100 rounded-lg shadow-lg">
           <ul>
-            {suggestions.map((s) => <li key={s} className="py-2 px-3 shadow-sm hover:bg-gray-100">🔍{s}</li>)}
+            {suggestions.map((s) =><li key={s} className="py-2 px-3 cursor-pointer shadow-sm hover:bg-gray-100">🔍{s}</li>)}
           </ul>
         </div>}
       </div>
       <div className="col-span-1">
         <img
           className="h-8"
-          alt="user"
+          alt="user-icon"
           src="https://cdn-icons-png.flaticon.com/512/709/709722.png"
         />
       </div>
